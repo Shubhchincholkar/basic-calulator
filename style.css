@@ -1,0 +1,373 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #050816, #0b1026, #24104f);
+  color: white;
+  padding: 40px;
+}
+
+/* Header */
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 35px;
+}
+
+.logo {
+  height: 75px;
+  width: 75px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 35px;
+
+  background: linear-gradient(135deg, #7c3aed, #06b6d4);
+  box-shadow: 0 0 25px #7c3aed;
+}
+
+.heading {
+  font-size: 35px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #00eaff, #8b5cf6, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+header p {
+  color: #b7c2e5;
+  font-size: 17px;
+  margin-top: 5px;
+}
+
+/* Main container */
+
+.main-container {
+  max-width: 1200px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 25px;
+
+  padding: 20px;
+
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+
+  box-shadow: 0 0 40px rgba(124, 58, 237, 0.3);
+}
+
+/* Left section */
+
+.left-div,
+.right-div {
+  padding: 15px;
+}
+
+.left-div > i,
+.leftdata > i {
+  font-size: 30px;
+  color: #a855f7;
+}
+
+h3 {
+  margin: 10px 0;
+  font-size: 20px;
+}
+
+p {
+  color: #b8c1ec;
+  line-height: 1.6;
+}
+
+/* button */
+
+.click {
+  margin-top: 25px;
+
+  width: 100%;
+  padding: 15px;
+
+  border: none;
+  border-radius: 12px;
+
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  background: linear-gradient(90deg, #7c3aed, #06b6d4);
+
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+
+  transition: 0.3s;
+}
+
+.d-a-o {
+  margin-top: 20px;
+
+  margin-left: 16rem;
+  padding: 15px;
+
+  border: none;
+  border-radius: 12px;
+
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  background: linear-gradient(90deg, #7c3aed, #06b6d4);
+
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+
+  transition: 0.3s;
+}
+.flex-to-all {
+  display: flex;
+}
+
+.d-a-o:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 35px #06b6d4;
+}
+
+.click:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 35px #06b6d4;
+}
+
+.hori-bar {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 30px 0;
+}
+
+/* how it works */
+
+.hiw {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 18px;
+}
+
+.hiw i {
+  color: #facc15;
+  font-size: 25px;
+}
+
+ol {
+  padding-left: 20px;
+}
+
+li {
+  margin: 12px 0;
+  color: #d5dcff;
+  font-size: 14px;
+}
+
+/* Right side */
+
+.right-div {
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.oprations {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.dis {
+  margin-bottom: 10px;
+}
+
+.op-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 15px;
+
+  border-radius: 15px;
+
+  background: rgba(255, 255, 255, 0.06);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.border {
+  height: 45px;
+  width: 45px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 12px;
+
+  color: #00eaff;
+
+  border: 1px solid #8b5cf6;
+  transition: 0.3s;
+}
+.border:hover {
+  transform: translatey(-3px);
+}
+/* addition */
+.fa-plus {
+  color: #31ff34;
+}
+.add-border {
+  border: 2.4px solid rgb(57, 254, 57);
+}
+.add-border:hover {
+  box-shadow: 0 0 35px rgb(57, 254, 57);
+}
+#addition {
+  color: #31ff34;
+}
+#add-frase {
+  color: #31ff34;
+}
+
+/* substraction */
+
+.fa-minus {
+  color: rgb(255, 159, 75);
+}
+.sub-border {
+  border: 2.4px solid rgb(255, 159, 75);
+}
+.sub-border:hover {
+  box-shadow: 0 0 35px rgb(255, 159, 75);
+}
+#sub-frase {
+  color: rgb(255, 159, 75);
+}
+#subtraction {
+  color: rgb(255, 159, 75);
+}
+
+/* multiplication*/
+.fa-xmark {
+  color: rgb(121, 147, 255);
+}
+.mul-border {
+  border: 2.4px solid rgb(121, 147, 255);
+}
+
+.mul-border:hover {
+  box-shadow: 0 0 35px rgb(121, 147, 255);
+}
+#mul-frase {
+  color: rgb(121, 147, 255);
+}
+#multiplication {
+  color: rgb(121, 147, 255);
+}
+
+/* division */
+.fa-divide {
+  color: rgb(202, 97, 255);
+}
+.div-border {
+  border: 2.4px solid rgb(202, 97, 255);
+}
+
+.div-border:hover {
+  box-shadow: 0 0 35px rgb(202, 97, 255);
+}
+#div-frase {
+  color: rgb(202, 97, 255);
+}
+#division {
+  color: rgb(202, 97, 255);
+}
+
+/* modulus */
+.fa-percent {
+  color: rgb(255, 116, 216);
+}
+.mod-border {
+  border: 2.4px solid rgb(255, 116, 216);
+}
+
+.mod-border:hover {
+  box-shadow: 0 0 35px rgb(255, 116, 216);
+}
+
+.mod-border:hover {
+  box-shadow: 0 0 35px rgb(255, 116, 216);
+}
+#mod-frase {
+  color: rgb(255, 116, 216);
+}
+#modulus {
+  color: rgb(255, 116, 216);
+}
+
+/* Exponentiation */
+.fa-angle-up {
+  color: rgb(76, 255, 228);
+}
+.exp-border {
+  border: 2.4px solid rgb(134, 235, 255);
+}
+.exp-border:hover {
+  box-shadow: 0 0 35px rgb(134, 235, 255);
+}
+#exp-frase {
+  color: rgb(76, 255, 228);
+}
+#exponentiation {
+  color: rgb(76, 255, 228);
+}
+
+.op-div h3 {
+  font-size: 17px;
+}
+
+.op-div span {
+  font-size: 25px;
+  color: #00eaff;
+  font-weight: bold;
+}
+
+/* Note */
+
+.note {
+  max-width: 1200px;
+  margin: 25px auto;
+  padding: 18px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.note i {
+  color: #facc15;
+  font-size: 22px;
+}
+
+.note span {
+  color: #a855f7;
+  font-weight: bold;
+}

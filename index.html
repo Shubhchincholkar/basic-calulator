@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic calculator</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <i class="fa-solid fa-calculator"></i>
+      </div>
+      <div class="upper-div">
+        <h2 class="heading">Basic Calculator</h2>
+        <p>Perform all basic opration with two numbers</p>
+      </div>
+    </header>
+    <div class="main-container">
+      <div class="left-div">
+        <i class="fa-solid fa-circle-user"></i>
+        <h3>Enter two number</h3>
+        <p>click the button below to enter two number using prompts</p>
+        <button class="click" onclick="calculate()">
+          Enter Numbers & Calculate
+        </button>
+        <div class="hori-bar"></div>
+        <div class="hiw">
+          <i class="fa-regular fa-lightbulb"></i>
+          <h3>How it works</h3>
+          <div class="list">
+            <ol>
+              <li>Click the button above</li>
+              <li>Enter two numbers in the prompt</li>
+              <li>Click "Do All Operation" for all results</li>
+              <li>Click any operation icon for a single result</li>
+              <li>View results on screen and console</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <div class="right-div">
+        <div class="flex-to-all">
+          <div class="leftdata">
+            <i class="fa-solid fa-arrow-trend-up"></i>
+            <h3>Calculation Results</h3>
+            <p class="dis">Results will appear here after calculation</p>
+          </div>
+          <div class="do-all-oprations" onclick="dao()">
+            <button class="d-a-o">Do All Operation</button>
+          </div>
+        </div>
+        <div class="oprations">
+          <div class="op-div">
+            <div class="border add-border" onclick="addOnly()">
+              <i class="fa-solid fa-plus"></i>
+            </div>
+            <h3>Addition</h3>
+            <p id="add-frase">a + b =</p>
+            <span id="addition">0</span>
+          </div>
+          <div class="op-div">
+            <div class="border sub-border" onclick="subOnly()">
+              <i class="fa-solid fa-minus"></i>
+            </div>
+            <h3>Subtraction</h3>
+            <p id="sub-frase">a - b =</p>
+            <span id="subtraction">0</span>
+          </div>
+          <div class="op-div">
+            <div class="border mul-border" onclick="mulOnly()">
+              <i class="fa-solid fa-xmark"></i>
+            </div>
+            <h3>Multiplication</h3>
+            <p id="mul-frase">a * b =</p>
+            <span id="multiplication">0</span>
+          </div>
+          <div class="op-div">
+            <div class="border div-border" onclick="divOnly()">
+              <i class="fa-solid fa-divide"></i>
+            </div>
+            <h3>Division</h3>
+            <p id="div-frase">a / b =</p>
+            <span id="division">0</span>
+          </div>
+          <div class="op-div">
+            <div class="border mod-border" onclick="modOnly()">
+              <i class="fa-solid fa-percent"></i>
+            </div>
+            <h3>Modulus</h3>
+            <p id="mod-frase">a % b =</p>
+            <span id="modulus">0</span>
+          </div>
+          <div class="op-div">
+            <div class="border exp-border" onclick="expOnly()">
+              <i class="fa-solid fa-angle-up"></i>
+            </div>
+            <h3>Exponentiation</h3>
+            <p id="exp-frase">a ^ b =</p>
+            <span id="exponentiation">0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="note">
+      <i class="fa-regular fa-star"></i>
+      <p>
+        <span>Note :</span> All results will be shown in the browser console.
+      </p>
+    </div>
+    <script>
+      console.log("<-- Basic Oprations Calculator -->");
+      let a;
+      let b;
+      function calculate() {
+        a = Number(prompt("Enter the value of a:"));
+        b = Number(prompt("Enter the value of b:"));
+        console.log(`value of a is : ${a}`);
+        console.log(`value of b is : ${b}`);
+
+        document.getElementById("add-frase").innerText = `${a} + ${b} =`;
+
+        document.getElementById("sub-frase").innerText = `${a} - ${b} =`;
+
+        document.getElementById("mul-frase").innerText = `${a} * ${b} =`;
+
+        document.getElementById("div-frase").innerText = `${a} / ${b} =`;
+
+        document.getElementById("mod-frase").innerText = `${a} % ${b} =`;
+
+        document.getElementById("exp-frase").innerText = `${a} ^ ${b} =`;
+      }
+
+      const dao = () => {
+        let additionResult = add(a, b);
+        let subtractionResult = sub(a, b);
+        let multiplicationResult = mul(a, b);
+        let divisionResult = divide(a, b);
+        let modulusResult = mod(a, b);
+        let exponentiationResult = exp(a, b);
+
+        document.getElementById("addition").innerText = additionResult;
+
+        document.getElementById("subtraction").innerText = subtractionResult;
+
+        document.getElementById("multiplication").innerText =
+          multiplicationResult;
+
+        document.getElementById("division").innerText = parseFloat(
+          divisionResult.toFixed(4),
+        );
+
+        document.getElementById("modulus").innerText = modulusResult;
+
+        document.getElementById("exponentiation").innerText =
+          exponentiationResult;
+
+        document.getElementById("add-frase").innerText = `${a} + ${b} =`;
+
+        document.getElementById("sub-frase").innerText = `${a} - ${b} =`;
+
+        document.getElementById("mul-frase").innerText = `${a} * ${b} =`;
+
+        document.getElementById("div-frase").innerText = `${a} / ${b} =`;
+
+        document.getElementById("mod-frase").innerText = `${a} % ${b} =`;
+
+        document.getElementById("exp-frase").innerText = `${a} ^ ${b} =`;
+
+        alert(`The value of a is : ${a} 
+        The value of b is : ${b}
+        1.Addition = ${additionResult}
+        2.Subtraction = ${subtractionResult}
+        3.Multiplication = ${multiplicationResult}
+        4.Division = ${parseFloat(divisionResult.toFixed(4))}
+        5.Modulus = ${modulusResult}
+        6.Exponentiation = ${exponentiationResult}`);
+        console.log(`<-- The End -->`);
+      };
+
+      // addition
+      const addOnly = () => {
+        let result = add(a, b);
+
+        document.getElementById("addition").innerText = result;
+      };
+      const add = (x, y) => {
+        console.log(`Addition is : ${x + y}`);
+        return x + y;
+      };
+
+      // subtraction
+      const subOnly = () => {
+        let result = sub(a, b);
+
+        document.getElementById("subtraction").innerText = result;
+      };
+      const sub = (x, y) => {
+        console.log(`Substraction is  : ${x - y}`);
+        return x - y;
+      };
+      // multiplication
+
+      const mulOnly = () => {
+        let result = mul(a, b);
+
+        document.getElementById("multiplication").innerText = result;
+      };
+      const mul = (x, y) => {
+        console.log(`Multiplication is  : ${x * y}`);
+        return x * y;
+      };
+
+      // divide
+      const divOnly = () => {
+        let result = divide(a, b);
+
+        document.getElementById("division").innerText = parseFloat(
+          result.toFixed(4),
+        );
+      };
+
+      const divide = (x, y) => {
+        console.log(`Division is : ${parseFloat((x / y).toFixed(4))}`);
+        return x / y;
+      };
+
+      // modulus
+      const modOnly = () => {
+        let result = mod(a, b);
+
+        document.getElementById("modulus").innerText = result;
+      };
+      const mod = (x, y) => {
+        console.log(`Modulus is  : ${x % y}`);
+        return x % y;
+      };
+      // exponentiation
+      const expOnly = () => {
+        let result = exp(a, b);
+
+        document.getElementById("exponentiation").innerText = result;
+      };
+      const exp = (x, y) => {
+        console.log(`Exponencial is  : ${x ** y}`);
+        return x ** y;
+      };
+    </script>
+  </body>
+</html>
